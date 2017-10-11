@@ -50,3 +50,10 @@ https://github.com/llSourcell/tensorflow_chatbot/issues/3
 Credits
 ===========
 Credit for the vast majority of code here goes to [suriyadeepan](https://github.com/suriyadeepan). I've merely created a wrapper to get people started. 
+
+
+## Additional Notes
+This repository is using older version of python and tensorflow, so there are some changes to do.
+First of all, you need to downgrade your Tensorflow to 1.0.0 by run this command
+
+`conda install -c conda-forge tensorflow=1.0.0`
