@@ -53,7 +53,18 @@ Credit for the vast majority of code here goes to [suriyadeepan](https://github.
 
 
 ## Additional Notes
-This repository is using older version of python and tensorflow, so there are some changes to do.
-First of all, you need to downgrade your Tensorflow to 1.0.0 by run this command
+If you encounter problems like this:
 
-`conda install -c conda-forge tensorflow=1.0.0`
+`pickle can't save a _thread.lock objects`
+
+Please go to here in your local machine:
+
+`Anaconda3\Lib\site-packages\tensorflow\contrib\legacy_seq2seq\python\ops\seq2seq.py`
+
+And change these three lines (line 848-850).
+
+```python
+#encoder_cell = copy.deepcopy(cell)
+encoder_cell = core_rnn_cell.EmbeddingWrapper(
+cell, #encoder_cell,
+```
